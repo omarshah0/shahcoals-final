@@ -1,16 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `ShahCoals Sole Properieter`,
+    description: `ShahCoals is a Sole Properiter of coal, delivering hihg quality coals in all over Pakistan. Contact Now at +923336483355.`,
+    author: `@omarfarooqshah`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/Images`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          exclude: `${__dirname}/src/assets/SVGs`,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layouts/layout.js`),
       },
     },
     `gatsby-transformer-sharp`,

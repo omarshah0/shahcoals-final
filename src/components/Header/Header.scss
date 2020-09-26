@@ -1,0 +1,126 @@
+header {
+  position: relative;
+}
+
+.header__secondary {
+  background-color: #343434;
+  display: flex;
+  padding: 0.3rem 5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  @media (max-width: 850px) {
+    padding: 0.3rem 1rem;
+  }
+  svg {
+    width: 0.8rem;
+
+    fill: rgba(255, 255, 255, 1);
+  }
+  .header__secondary__left {
+    display: flex;
+    gap: 1rem;
+  }
+  .hsl__svg {
+    display: flex;
+    color: #d6d6d6;
+    align-items: center;
+    gap: 10px;
+    svg {
+      width: 0.8rem;
+      @media (max-width: 650px) {
+        display: none;
+      }
+    }
+  }
+  p {
+    font-size: 14px;
+    @media (max-width: 650px) {
+      display: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffff;
+    font-weight: bold;
+  }
+  .header__secondary__right {
+    display: flex;
+    gap: 10px;
+    svg {
+      width: 1.2rem;
+      transition: fill 200ms ease-out;
+      fill: rgba(255, 255, 255, 0.8);
+      &:hover {
+        fill: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+.header__primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  @media (max-width: 850px) {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+}
+
+.header__logo {
+  min-width: 200px;
+  img {
+    object-fit: contain;
+  }
+  @media (max-width: 850px) {
+    min-width: 100px;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  @media (max-width: 850px) {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #343434;
+    margin: 0 1.2rem;
+    transition: color 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    &:hover {
+      color: #fdb822;
+    }
+  }
+  .vl {
+    height: 33px;
+    width: 1px;
+    background-color: rgba(52, 52, 52, 0.2);
+  }
+}
+.nav {
+  width: 40px;
+  padding: 10px;
+  @media (min-width: 850px) {
+    display: none;
+  }
+  cursor: pointer;
+  span {
+    margin-bottom: 0.3rem;
+    background: black;
+    height: 2px;
+    width: 100%;
+    display: block;
+  }
+}
