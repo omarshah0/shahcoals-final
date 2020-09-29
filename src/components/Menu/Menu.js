@@ -23,20 +23,27 @@ function Menu({ menu }) {
 
   return (
     <div className="menu">
-      <ul>
-        <li>
+      <div className="menu__nav">
+        <span>Menu</span>
+        <div>
           <Link to="/">Home</Link>
-        </li>
-        <li>
           <Link to="/about">About</Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link to="/services">Services</Link>
-        </li>
-        <li>
           <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <hr />
+      <div className="menu__contact">
+        <span>Get in Touch With Us</span>
+        <a href="mailto: sohail226@gmail.com">Email</a>
+        <span>+92 333 648 3355</span>
+        <span>Get a Free Quote</span>
+      </div>
+      <h1>
+        ShahCoals <span>Pvt</span> <span>Ltd</span>
+      </h1>
     </div>
   )
 }

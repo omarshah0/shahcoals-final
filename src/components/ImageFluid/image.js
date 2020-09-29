@@ -13,7 +13,7 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-const Image = ({ src }) => {
+const Image = ({ src, alt }) => {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -23,12 +23,59 @@ const Image = ({ src }) => {
           }
         }
       }
+      coal1: file(relativePath: { eq: "coal1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      coal2: file(relativePath: { eq: "coal2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      Coal_Product_1: file(relativePath: { eq: "Coal_Product_1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      CEO_Bkg: file(relativePath: { eq: "ceo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ceo_saab: file(relativePath: { eq: "ceo_saab.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <>
-      {src === "logo" ? <Img fluid={data.logo.childImageSharp.fluid} /> : null}
+      {src === "logo" ? (
+        <Img fluid={data.logo.childImageSharp.fluid} alt={alt} />
+      ) : src === "coal1" ? (
+        <Img fluid={data.coal1.childImageSharp.fluid} alt={alt} />
+      ) : src === "coal2" ? (
+        <Img fluid={data.coal2.childImageSharp.fluid} alt={alt} />
+      ) : src === "Coal_Product_1" ? (
+        <Img fluid={data.Coal_Product_1.childImageSharp.fluid} alt={alt} />
+      ) : src === "CEO_Bkg" ? (
+        <Img fluid={data.CEO_Bkg.childImageSharp.fluid} alt={alt} />
+      ) : src === "ceo_saab" ? (
+        <Img fluid={data.ceo_saab.childImageSharp.fluid} alt={alt} />
+      ) : null}
     </>
   )
 }

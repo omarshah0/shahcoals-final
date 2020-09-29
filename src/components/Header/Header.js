@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useLocation } from "@reach/router"
 import { Link } from "gatsby"
 import Menu from "../Menu/Menu"
 import Image from "../ImageFluid/image"
@@ -12,6 +13,10 @@ import "./Header.scss"
 
 function Header() {
   const [menu, setMenu] = useState(false)
+  const location = useLocation()
+  useEffect(() => {
+    setMenu(false)
+  }, [location])
   return (
     <header className="header">
       <Menu menu={menu} />
